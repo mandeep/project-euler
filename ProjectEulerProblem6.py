@@ -13,17 +13,17 @@ The square of the sum of the first ten natural numbers is,
 Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 - 385 = 2640.
 Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
 """
-def first():
+def first(): # Function computes the sum of the squares
     total = 0
     for y in range(101):
-        total += y ** 2
+        total += y ** 2 # For each number in range, calculate its square and add to total
     return total
 
-def second():
+def second(): # Function computes the square of the sum
     result = 0
     for x in range(101):
-        result += x
-        resultant = result ** 2
+        result += x # Sum each number in range then add to result
+        resultant = result ** 2 # Square the sum of the numbers found in the range
     return resultant
     
-print second() - first()
+print second() - first() 
