@@ -17,7 +17,7 @@ integers by first dividing the greatest common divisor of those integers prior t
 """
 from fractions import gcd # Importing the gcd module to find the gcd of two or more integers.
 
-print reduce(lambda a,b: (a * b) / gcd(a,b), range(1,21)) # Add 1 to range since range is inclusive
+print reduce(lambda a,b: (a * b) / gcd(a,b), range(1,21)) # Add 1 to range to stop at 21.
 
 # Using list comprehension of lambda a,b since it handles the reduce function well. 
 # Because lcm(a,b,c) = lcm(a,b),c,d..., we can use range(1,21) in the reduce function.
