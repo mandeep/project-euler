@@ -20,4 +20,4 @@ from fractions import gcd # Importing the gcd module to find the gcd of two or m
 print reduce(lambda a,b: (a * b) / gcd(a,b), range(1,21)) # Add 1 to range to stop at 21.
 
 # Using list comprehension of lambda a,b since it handles the reduce function well. 
-# Because lcm(a,b,c) = lcm(a,b),c,d..., we can use range(1,21) in the reduce function.
+# Because lcm(a,b,c) = lcm(a,b),c,d..., range(1,21) can be used in the reduce function.
