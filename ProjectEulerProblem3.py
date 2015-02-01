@@ -16,5 +16,5 @@ while i ** 2 < n:
         n /= i # The largest prime factor is the unknown. Once the initial while loop fails, 
         # the value of n is changed to n divided by its largest factor resulting in the
         # largest prime factor.
-    i = i + 1 # Increases i until the square of i is greater than or equal to n.
+    i += 1 # Increases i until the square of i is greater than or equal to n.
 print n
