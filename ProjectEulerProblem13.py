@@ -108,10 +108,12 @@ Problem: Work out the first ten digits of the sum of the following one-hundred 5
 Description: This problem was solved by adding all the numbers into a file, and then retrieving the 
 numbers as x in a for loop. Each x is then added to the total variable in order to find the sum. 
 An index slice is then used to find the first ten digits.
+
+References: https://docs.python.org/2/library/stdtypes.html#bltin-file-objects
 """
 with open('problem13numbers.txt') as n:
 	total = 0
 	for x in n:
 		total += int(x) # Numbers in file need to be integers in order to add to total.
 	newtotal = str(total) # total needs to be a string in order to slice it.
-print newtotal[0:10]
+	print newtotal[0:10]
