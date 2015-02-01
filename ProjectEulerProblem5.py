@@ -9,7 +9,8 @@ by all of the numbers from 1 to 20?
 
 References: http://en.wikipedia.org/wiki/Least_common_multiple;
 http://en.wikipedia.org/wiki/Greatest_common_divisor;
-http://en.wikipedia.org/wiki/Euclidean_algorithm
+http://en.wikipedia.org/wiki/Euclidean_algorithm;
+https://docs.python.org/2/library/functions.html#reduce
 
 Description: It is more efficient to find the least common multiple of two or more positive
 integers by first dividing the greatest common divisor of those integers prior to multiplying.
