@@ -3,7 +3,8 @@ Title: Project Euler - Problem 13: Large Sum
 Author: Mandeep Bhutani
 Date: 2/1/2015
 
-Problem: Work out the first ten digits of the sum of the following one-hundred 50-digit numbers:
+Problem: Work out the first ten digits of the sum of the following
+one-hundred 50-digit numbers:
 37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
@@ -105,15 +106,16 @@ Problem: Work out the first ten digits of the sum of the following one-hundred 5
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690
 
-Description: This problem was solved by adding all the numbers into a file, and then retrieving the 
-numbers as x in a for loop. Each x is then added to the total variable in order to find the sum. 
+Description: This problem was solved by adding all the numbers
+into a file, and then retrieving the numbers as x in a for loop.
+Each x is then added to the total variable in order to find the sum.
 An index slice is then used to find the first ten digits.
 
 References: https://docs.python.org/2/library/stdtypes.html#bltin-file-objects
 """
 with open('problem13numbers.txt') as n:
-	total = 0
-	for x in n:
-		total += int(x) # Numbers in file need to be integers in order to add to total.
-	newtotal = str(total) # total needs to be a string in order to slice it.
-	print newtotal[0:10]
+    total = 0
+    for x in n:
+        total += int(x)  # Numbers in file need to be integers.
+        newtotal = str(total)  # total must be a string in order to slice it.
+        print newtotal[0:10]
