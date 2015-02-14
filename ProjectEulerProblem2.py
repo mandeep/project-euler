@@ -9,12 +9,13 @@ be: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 By considering the terms in the Fibonacci sequence
 whose values do not exceed four million, find the sum of the even-valued terms.
 """
-a, b = 0, 1  # Setting the beginning of the Fibonnaci sequence to 0,1.
+a, b = 0, 1  # Setting the beginning of the Fibonnaci sequence to 0, 1.
 total = 0
 while a <= 4000000:
     if a % 2 == 0:
         total += a
-    a, b = b, a+b  # Once a = 0 is added to the total, the variables' values
+    a, b = b, a + b  # Creating a tuple with the values (b, a + b)
+    # Once a = 0 is added to the total, the variables' values
     # are changed to find the next number in the series.
     # This repeats until the generator reaches 4,000,000.
 print total
