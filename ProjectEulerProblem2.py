@@ -10,11 +10,10 @@ By considering the terms in the Fibonacci sequence
 whose values do not exceed four million, find the sum of the even-valued terms.
 """
 a, b = 0, 1  # Setting the beginning of the Fibonnaci sequence to 0,1.
-n = 1000
-total = []
-for a in range(2, n):
+total = 0
+while a <= 4000000:
     if a % 2 == 0:
-        total.append(a)
+        total += a
     a, b = b, a+b  # Once a = 0 is added to the total, the variables' values
     # are changed to find the next number in the series.
     # This repeats until the generator reaches 4,000,000.
