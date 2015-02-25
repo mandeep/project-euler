@@ -6,7 +6,8 @@ Date: 2/24/2015
 Problem: The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
 Find the sum of all the primes below two million.
 
-References: http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+References: http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes;
+https://docs.python.org/2/library/stdtypes.html
 """
 
 
