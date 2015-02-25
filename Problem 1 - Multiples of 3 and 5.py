@@ -10,10 +10,10 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
 
-def prime_number():
+def multiples():
     result = 0
     for i in range(1, 1000):
         if i % 3 == 0 or i % 5 == 0:  # Find factors of 3 or 5
             result += i  # Add these numbers to result
         return result
-print prime_number()
+print multiples()
