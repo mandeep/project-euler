@@ -11,7 +11,7 @@ References: http://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
 
 
 def eratosthenes(n):
-    total = set()  # Used to generate unique primes
+    total = set()  # Used to generate unique multiples
     result = []
     for p in range(2, n+1):  # The range extends to n+1 in order to include
         # n in the calculation
