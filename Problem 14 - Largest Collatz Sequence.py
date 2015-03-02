@@ -1,5 +1,5 @@
 """
-Title: Project Euler - Problem 10: Summation of Primes
+Title: Project Euler - Problem 14: Largest Collatz Sequence
 Author: Mandeep Bhutani
 Date: 2/24/2015
 
@@ -19,7 +19,8 @@ it is thought that all starting numbers finish at 1.
 Which starting number, under one million, produces the longest chain?
 """
 
-for x in range(0, 1000000):
+
+def collatz(x):
     result = [x]
     while x > 1:
         if x % 2 == 0:
@@ -27,3 +28,8 @@ for x in range(0, 1000000):
         else:
             x = 3 * x + 1
         result.append(x)
+    return result
+
+for x in range(1, 1000001):
+    if len(collatz(x)) > 520:
+        print x
