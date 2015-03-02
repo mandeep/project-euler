@@ -30,6 +30,11 @@ def collatz(x):
         result.append(x)
     return result
 
-for x in range(1, 1000001):
-    if len(collatz(x)) > 520:
-        print x
+
+def largest_collatz(y):
+    total = []
+    for x in range(1, y):
+        total.append((int(len(collatz(x)))))
+    largest = max(total)
+    return (total.index(largest) + 1)
+print largest_collatz(1000001)
