@@ -14,7 +14,7 @@ total = 0
 while a <= 4000000:
     if a % 2 == 0:
         total += a
-    a, b = b, a + b  # Creating a tuple with the values (b, a + b)
+    a, b = b, a + b  # Unpacking a tuple with the values (b, a + b)
     # Once a = 0 is added to the total, the variables' values
     # are changed to find the next number in the series.
     # This repeats until the generator reaches 4,000,000.
