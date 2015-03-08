@@ -18,11 +18,10 @@ def is_prime(n):
 
 
 def summation(s):
-    result = []
-    p = 1
+    result, p = 0, 1
     while p < s:
         p += 1
         if is_prime(p) == True:
-            result.append(p)
-    return sum(result)
+            result += p
+    return result
 print summation(2000000)
