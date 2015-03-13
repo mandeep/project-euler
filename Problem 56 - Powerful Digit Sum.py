@@ -1,7 +1,7 @@
 """
 Project: Project Euler - Problem 56: Powerful Digit Sum
 Author: Mandeep Bhutani
-Date: 3/12/2015
+Date: 3/13/2015
 
 Problem: A googol 10^100 is a massive number: one followed by one-hundred
 zeros; 100^100 is almost unimaginably large: one followed by two-hundred zeros.
