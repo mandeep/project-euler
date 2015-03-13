@@ -9,6 +9,7 @@ their digits. Note: as 1! = 1 and 2! = 2 are not sums they are not included.
 
 Description: A brute force method was applied to this problem. 50,000 was
 picked as a starting point and ended up being the correct range end point.
+Ranges up to 9! were tested.
 """
 from math import factorial
 
