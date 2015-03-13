@@ -21,4 +21,3 @@ def largest_prime_factor(n):
             n /= i
         i += 1
     return n
-
