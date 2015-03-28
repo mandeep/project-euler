@@ -17,22 +17,25 @@ Let us list the factors of the first seven triangle numbers:
 We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred
 divisors?
+
+Description: This is a brute force approach with the range in find_triangular()
+changed in increments of 10,000. The final range finds the solution in 1.1s.
 """
+from math import sqrt
 
 
 def find_divisors(n):
     result = []
-    for i in xrange(1, n + 1):
+    for i in xrange(1, int(sqrt(n) + 1)):
         if n % i == 0:
             result.append(i)
-    return result
+            result.append(n / i)
+    return sorted(result)
 
 
 def find_triangular():
-    for x in xrange(0, 5000):
+    for x in xrange(10000, 20000):
         number = int(x * (x + 1) / 2)
         if len(find_divisors(number)) > 500:
             return number
-
-
 print find_triangular()
