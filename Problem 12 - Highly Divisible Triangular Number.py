@@ -18,8 +18,8 @@ We can see that 28 is the first triangle number to have over five divisors.
 What is the value of the first triangle number to have over five hundred
 divisors?
 
-Description: This is a brute force approach with the range in find_triangular()
-changed in increments of 10,000. The final range finds the solution in 1.1s.
+Description: This is a brute force approach that tries every number starting
+from 1 until a solution is reached.
 """
 from math import sqrt
 
@@ -33,9 +33,11 @@ def find_divisors(n):
     return sorted(result)
 
 
-def find_triangular():
-    for x in xrange(10000, 20000):
+def find_triangular(n):
+    x = 1
+    while True:
         number = int(x * (x + 1) / 2)
-        if len(find_divisors(number)) > 500:
+        x += 1
+        if len(find_divisors(number)) > n:
             return number
-print find_triangular()
+print find_triangular(500)
