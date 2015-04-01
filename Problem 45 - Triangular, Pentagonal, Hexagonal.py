@@ -9,13 +9,10 @@ T285 = P165 = H143 = 40755. Find the next triangle number that is also
 pentagonal and hexagonal.
 """
 
-triangular, pentagonal, hexagonal = [], [], []
-for n in xrange(2, 100000):
-    triangle = n * (n + 1) / 2
-    pentagon = n * (3 * n - 1) / 2
-    hexagon = n * (2 * n - 1)
-    triangular.append(triangle)
-    pentagonal.append(pentagon)
-    hexagonal.append(hexagon)
-result = [x for x in triangular if x in pentagonal if x in hexagonal]
-print result
+triangle = [n * (n + 1) / 2 for n in xrange(1, 100000)]
+pentagon = [n * (3 * n - 1) / 2 for n in xrange(1, 100000)]
+hexagon = [n * (2 * n - 1) for n in xrange(1, 100000)]
+for i in triangle:
+    if i in pentagon and i in hexagon and i > 40755:
+        print i
+        break
