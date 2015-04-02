@@ -15,9 +15,7 @@ def digit_powers(n):
     result = []
     for i in xrange(2, 500000):
         digits = [int(x) for x in str(i)]
-        total = []
-        for j in digits:
-            total.append(j ** n)
+        total = [j ** n for j in digits]
         if sum(total) == i:
             result.append(sum(total))
     return sum(result)
