@@ -17,6 +17,6 @@ def digit_powers(n):
         digits = [int(x) for x in str(i)]
         total = [j ** n for j in digits]
         if sum(total) == i:
-            result.append(sum(total))
+            result.append(i)
     return sum(result)
 print digit_powers(5)
