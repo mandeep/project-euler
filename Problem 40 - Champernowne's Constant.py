@@ -19,6 +19,6 @@ champernowne = "".join([str(number) for number in xrange(1, 200000)])
 expression = (1, 10, 100, 1000, 10000, 100000, 1000000)
 
 result = 1
-for frac in expression:
-    result *= int(champernowne[frac - 1])
+for fraction in expression:
+    result *= int(champernowne[fraction - 1])
 print result
