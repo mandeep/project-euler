@@ -22,10 +22,7 @@ document doesn't exceed 260.
 
 
 def triangle_numbers(n):
-    result = []
-    for x in xrange(1, n + 1):
-        number = x * (x + 1) / 2
-        result.append(number)
+    result = [x * (x + 1) / 2 for x in xrange(1, n + 1)]
     return result
 
 
