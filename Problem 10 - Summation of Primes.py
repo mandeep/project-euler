@@ -10,7 +10,9 @@ from math import sqrt
 
 
 def is_prime(n):
-    for x in range(2, int(sqrt(n) + 1)):
+    if n < 2:
+        return False
+    for x in xrange(2, int(sqrt(n) + 1)):
         if n % x == 0:
             return False
     else:
@@ -18,9 +20,8 @@ def is_prime(n):
 
 
 def summation(s):
-    result, p = 0, 1
-    while p < s:
-        p += 1
+    result = 0
+    for p in xrange(1, s):
         if is_prime(p) == True:
             result += p
     return result
