@@ -32,7 +32,6 @@ triangle = triangle.splitlines()
 triangle = [[int(x) for x in row.split()] for row in triangle]
 max_sum = 0
 
-for x in xrange(1, len(triangle)):
-    for y in xrange(0, len(triangle[x])):
-        print triangle[x][y]
-print max_sum
+for i, a in enumerate(triangle):
+    for j, b in enumerate(a):
+        print triangle[i][j]
