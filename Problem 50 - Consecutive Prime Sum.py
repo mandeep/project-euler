@@ -22,7 +22,7 @@ def is_prime(n):
     else:
         return True
 
-primes = [x for x in xrange(6, 1000000) if is_prime(x) == True]
+primes = [x for x in xrange(7, 1000000) if is_prime(x) == True]
 total, result = 0, 0
 for number in primes:
     total = max(total, total + number)
