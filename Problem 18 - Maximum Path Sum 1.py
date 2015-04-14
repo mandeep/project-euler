@@ -11,6 +11,10 @@ numbers on the row below, the maximum total from top to bottom is 23.
 8 5 9 3
 That is, 3 + 7 + 4 + 9 = 23.
 Find the maximum total from top to bottom of the triangle below:
+
+Description: By transposing the triangle from largest row on top to smallest row on the
+bottom, we can iterate through each number allowing us to find the max of the number
+adjacent to the number preceding it. 
 """
 triangle = """75
 95 64
@@ -30,8 +34,8 @@ triangle = """75
 """
 triangle = triangle.splitlines()
 triangle = [[int(x) for x in row.split()] for row in triangle]
-max_sum = 0
 
-for i, a in enumerate(triangle):
-    for j, b in enumerate(a):
-        print triangle[i][j]
+for row in xrange(len(triangle) - 1, 0, -1):
+    for column in xrange(0, row):
+        triangle[row - 1][column] += max(triangle[row][column], triangle[row][column + 1])
+print triangle[row - 1][column]
