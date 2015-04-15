@@ -14,14 +14,14 @@ Find the maximum total from top to bottom in triangle.txt, a 15K text file conta
 triangle with one-hundred rows.
 
 Description: By transposing the triangle from largest row on top to smallest row on the
-bottom, we can iterate through each number allowing us to find the max of the number
-adjacent to the number preceding it. 
+bottom, we can iterate through each number allowing us to add the max of two numbers to
+a number adjacent to it in the row that follows. The maximums continually add until the
+max path sum is found. 
 """
 with open('triangle.txt') as triangle:
     triangle = triangle.readlines()
     triangle = [[int(x) for x in row.split()] for row in triangle]
-
-    for row in xrange(len(triangle) - 1, 0, -1):
+    for row in xrange(len(triangle)-1, 0, -1):
         for column in xrange(0, row):
             triangle[row - 1][column] += max(triangle[row][column], triangle[row][column + 1])
     print triangle[row - 1][column]
