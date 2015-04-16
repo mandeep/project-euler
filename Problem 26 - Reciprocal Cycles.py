@@ -13,8 +13,6 @@ the longest reciprocal cycle of a unit fraction between 1 and 1000. The cycle le
 omit numbers with cycles greater than 3000 due to a precision rounding error, and -1
 due to the find function's error exception.
 """
-
-
 from decimal import getcontext, Decimal
 
 getcontext().prec = 3000
