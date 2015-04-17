@@ -28,6 +28,5 @@ def is_abundant(n):
 
 abundant_numbers = [x for x in xrange(1, 28123+1) if is_abundant(x) == True]
 abundant_sums = set([(i + j) for i in abundant_numbers for j in abundant_numbers])
-
 result = sum([n for n in xrange(1, 28123+1) if n not in abundant_sums])
 print result
