@@ -14,10 +14,8 @@ number below ten-thousand, it will either (i) become a palindrome in less than f
 (ii) no one, with all the computing power that exists, has managed so far to map it to a palindrome.
 How many Lychrel numbers are there below ten-thousand?
 """
-
-x = 1
 result = 0
-while x < 10000:
+for x in xrange(1, 10000):
     y = int(str(x)[::-1]) + x
     count = 0
     while str(y) != str(y)[::-1]:
@@ -26,5 +24,4 @@ while x < 10000:
         if count > 50:
             result += 1
             break
-    x += 1
 print result
