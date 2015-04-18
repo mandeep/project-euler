@@ -22,20 +22,11 @@ def is_prime(n):
 
 def is_circular_prime(m):
     m = str(m)
-    if len(m) == 3:
-        return is_prime(int(m)) and is_prime(int(m[1] + m[2] + m[0])) and \
-            is_prime(int(m[2] + m[0] + m[1]))
-    elif len(m) == 4:
-        return is_prime(int(m)) and is_prime(int(m[1] + m[2] + m[3] + m[0])) and \
-            is_prime(int(m[2] + m[3] + m[0] + m[1])) and is_prime(int(m[3] + m[0] + m[1] + m[2]))
-    elif len(m) == 5:
-        return is_prime(int(m)) and is_prime(int(m[1] + m[2] + m[3] + m[4] + m[0])) \
-            and is_prime(int(m[2] + m[3] + m[4] + m[0] + m[1])) and is_prime(int(m[3] + m[4] + m[0] + m[1] + m[2])) \
-            and is_prime(int(m[4] + m[0] + m[1] + m[2] + m[3]))
-    elif len(m) == 6:
-        return is_prime(int(m)) and is_prime(int(m[1] + m[2] + m[3] + m[4] + m[5] + m[0])) \
-            and is_prime(int(m[2] + m[3] + m[4] + m[5] + m[0] + m[1])) and is_prime(int(m[3] + m[4] + m[5] + m[0] + m[1] + m[2])) \
-            and is_prime(int(m[4] + m[5] + m[0] + m[1] + m[2] + m[3])) and is_prime(int(m[5] + m[0] + m[1] + m[2] + m[3] + m[4]))
+    total = []
+    for dex, number in enumerate(m):
+        total.append(m[-dex:len(m)] + m[0:-dex])
+    return all([is_prime(int(k)) for k in total]) == True
+
 
 count = 13
 for x in xrange(100, 1000000):
