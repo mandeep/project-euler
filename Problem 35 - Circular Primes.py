@@ -22,8 +22,8 @@ def is_prime(n):
 
 def is_circular_prime(m):
     m = str(m)
-    primes = [m[dex:] + m[:dex] for dex, number in enumerate(m)]
-    return all([is_prime(int(k)) for k in primes]) == True
+    total = [m[dex:] + m[:dex] for dex, number in enumerate(m)]
+    return all([is_prime(int(k)) for k in total]) == True
 
 
 count = 13
