@@ -24,7 +24,7 @@ def is_circular_prime(m):
     m = str(m)
     total = []
     for dex, number in enumerate(m):
-        total.append(m[-dex:len(m)] + m[0:-dex])
+        total.append(m[dex:] + m[:dex])
     return all([is_prime(int(k)) for k in total]) == True
 
 
