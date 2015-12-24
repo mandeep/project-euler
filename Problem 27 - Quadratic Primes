@@ -17,8 +17,6 @@ e.g. |11| = 11 and |−4| = 4
 Find the product of the coefficients, a and b, for the quadratic expression that produces
 the maximum number of primes for consecutive values of n, starting with n = 0.
 """
-
-
 from math import sqrt
 
 
@@ -34,7 +32,7 @@ def is_prime(n):
 maximum_number, max_a, max_b = 0, 0, 0
 for a in range(-1000, 1000):
     for b in range(0, 1000):
-        n = 1
+        n = 0
         while is_prime(n ** 2 + (a * n) + b):
             n += 1
         if n > maximum_number:
