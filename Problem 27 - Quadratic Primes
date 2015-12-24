@@ -37,6 +37,5 @@ for a in range(-1000, 1000):
             n += 1
         if n > maximum_number:
             maximum_number = n
-            max_a = a
-            max_b = b
+            max_a, max_b = a, b
 print(max_a * max_b)
