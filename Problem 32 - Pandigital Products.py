@@ -8,6 +8,11 @@ We shall say that an n-digit number is pandigital if it makes use of all the dig
 for example, the 5-digit number, 15234, is 1 through 5 pandigital. The product 7254 is unusual, as the 
 identity, 39 × 186 = 7254, containing multiplicand, multiplier, and product is 1 through 9 pandigital.
 Find the sum of all products whose multiplicand/multiplier/product identity can be written as a 1 through 9 pandigital.
+
+Description: 
+From the problem, we are able to deduce that the product will be four numbers in length.
+The only multiplicands and multipliers to produce this product are a single digit number multiplied by a
+quadruple digit number and a double digit number multiplied by a triple digit number.
 """
 result = []
 for a in range(1, 10):
