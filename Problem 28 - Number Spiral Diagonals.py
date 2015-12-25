@@ -24,9 +24,8 @@ Top-Right: n ** 2
 
 Adding all of these corners yields: 4 * (n ** 2) - (6 * n) + 6
 
-To find the sum of the diagonals of the largest square, we use the formula to find the number in the corner
-of each of the smaller squares. As the square moves from bottom-right to bottom-left to top-left to top-right
-we see that each number increases by 2.
+To find the sum of the diagonals of the largest square, we use the formula to find the number in the corners
+of each of the smaller squares.
 """
 result = 1
 for n in range(3, 1001+1, 2):
