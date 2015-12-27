@@ -17,7 +17,6 @@ The first three consecutive numbers to have three distinct prime factors are:
 
 Find the first four consecutive integers to have four distinct prime factors. What is the first of these numbers?
 """
-from math import sqrt
 
 
 def factors(n):
@@ -31,10 +30,10 @@ def factors(n):
         if p * p > n:
             if n > 1:
                 prime_factors.add(n)
-                break 
+                break
     return prime_factors
 
-i = 648
+i = (2 * 3 * 5 * 7)
 while True:
     i += 1
     if len(factors(i)) == 4 and len(factors(i + 1)) == 4 and len(factors(i + 2)) == 4 and len(factors(i + 3)) == 4:
