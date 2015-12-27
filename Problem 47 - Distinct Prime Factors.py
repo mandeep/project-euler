@@ -20,22 +20,19 @@ Find the first four consecutive integers to have four distinct prime factors. Wh
 from math import sqrt
 
 
-def is_prime(x):
-    if x < 2:
-        return False
-    for y in range(2, int(sqrt(x)) + 1):
-        if x % y == 0:
-            return False
-    else:
-        return True
-
-
 def factors(n):
-    factors = set()
-    for i in range(2, n):
-        if n % i == 0 and is_prime(i) == True:
-            factors.add(i)
-    return factors
+    p = 2
+    prime_factors = set()
+    while n > 1:
+        while n % p == 0:
+            prime_factors.add(p)
+            n /= p
+        p += 1
+        if p * p > n:
+            if n > 1:
+                prime_factors.add(n)
+                break 
+    return prime_factors
 
 i = 648
 while True:
