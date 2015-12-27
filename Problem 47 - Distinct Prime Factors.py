@@ -1,5 +1,5 @@
 """
-Title: Project Euler - Problem 2: Even Fibonacci Numbers
+Title: Project Euler - Problem 47: Distinct Prime Factors
 Author: Mandeep Bhutani
 Date: 12/26/2015
 
