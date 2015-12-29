@@ -21,4 +21,4 @@ def largest_prime_factor(n):
             n /= i
         i += 1
     return n
-print largest_prime_factor(600851475143)
+print(largest_prime_factor(600851475143))
