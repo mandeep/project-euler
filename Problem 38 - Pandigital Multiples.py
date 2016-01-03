@@ -16,13 +16,15 @@ What is the largest 1 to 9 pandigital 9-digit number that can be formed as the c
 Analysis: Three digit numbers concatenated with multiples are not large enough to be pandigital numbers. 
 Five digit numbers concatenated with multiples are too large to be pandigital numbers. Therefore, we only need
 to check four digit numbers multiplied by 1 and 2 since these two multiples are within the nine digit limit.
+Since the largest pandigital is 987654321 and the lower limit pandigital given from the problem is 918273645,
+we only need to test the range between the first four digits of these two numbers.
 """
 from itertools import permutations
 
 
 pandigitals = [str("".join(x)) for x in permutations("123456789") if str("".join(x)) > "918273645"]
 
-for number in range(9999, 1000, -1):
+for number in range(9876, 9182, -1):
     if str(number * 1) + str(number * 2) in pandigitals:
         print(str(number * 1) + str(number * 2))
         break
