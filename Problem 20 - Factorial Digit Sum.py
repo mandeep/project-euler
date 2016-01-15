@@ -13,14 +13,7 @@ Description: First a function for a factorial needs to be defined.
 While there is a math.factorial function that could serve this purpose,
 a user defined function was chosen for this problem.
 """
+from math import factorial
 
-
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n-1)
-
-# Converting 100! into a list of integers
-digits = [int(x) for x in str(factorial(100))]
-print sum(digits)  # Printing the sum of the integers in digits
+sum_of_digits = sum([int(x) for x in str(factorial(100))])
+print(sum_of_digits)

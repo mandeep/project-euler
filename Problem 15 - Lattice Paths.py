@@ -13,6 +13,6 @@ References: https://en.wikipedia.org/wiki/Pascal's_triangle
 from math import factorial
 
 
-def routes(n):
-    return factorial(2 * n) / (factorial(n) * factorial(n))
-print routes(20)
+n = 20
+result = factorial(2 * n) // (factorial(n) * factorial(n))
+print(result)

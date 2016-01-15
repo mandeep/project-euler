@@ -14,9 +14,9 @@ from datetime import date
 
 number_of_sundays = 0
 
-for year in xrange(1901, 2001):
-    for month in xrange(1, 13):
+for year in range(1901, 2000+1):
+    for month in range(1, 12+1):
         if date(year, month, 1).isoweekday() == 7:
             number_of_sundays += 1
 
-print number_of_sundays
+print(number_of_sundays)

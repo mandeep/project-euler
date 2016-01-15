@@ -24,7 +24,7 @@ def collatz(x):
     result = [x]
     while x > 1:
         if x % 2 == 0:
-            x = x / 2
+            x = x // 2
         else:
             x = 3 * x + 1
         result.append(x)
@@ -37,4 +37,4 @@ def largest_collatz(y):
         total.append((int(len(collatz(x)))))
     largest = max(total)
     return (total.index(largest) + 1)
-print largest_collatz(1000001)
+print(largest_collatz(1000001))

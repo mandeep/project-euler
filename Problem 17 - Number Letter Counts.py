@@ -42,9 +42,9 @@ result = len(combination)
 # Because the problem uses British English, the word and needs to be added.
 # One hundred sixty two in American English, a.k.a., best English, needs to
 # be one hundred and sixty two.
-for british in xrange(100, 1000):
+for british in range(100, 1000):
     result += 3
 
 # There are nine values between one hundred and one thousand that don't use
 # the word "and". They are one hundred, two hundred, three hundred,...
-print result - (9 * 3)
+print(result - (9 * 3))

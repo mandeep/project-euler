@@ -35,7 +35,7 @@ triangle = """75
 triangle = triangle.splitlines()
 triangle = [[int(x) for x in row.split()] for row in triangle]
 
-for row in xrange(len(triangle) - 1, 0, -1):
-    for column in xrange(0, row):
+for row in range(len(triangle) - 1, 0, -1):
+    for column in range(0, row):
         triangle[row - 1][column] += max(triangle[row][column], triangle[row][column + 1])
-print triangle[row - 1][column]
+print(triangle[row - 1][column])

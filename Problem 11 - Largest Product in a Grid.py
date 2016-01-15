@@ -1,7 +1,7 @@
 """
 Title: Project Euler - Problem 11: Largest Product in a Grid
 Author: Mandeep Bhutani
-Date: 4/7/2015
+Date: 04/07/2015
 
 Problem: In the 20x20 grid below, four numbers along a diagonal line have been
 marked in red. The product of these numbers is 26 x 63 x 78 x 14 = 1788696.

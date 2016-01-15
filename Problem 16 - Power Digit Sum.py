@@ -14,4 +14,4 @@ Once in a list the digits need to be converted back
 to an integer and then summed. With list
 comprehension this can all be achieved in a single line.
 """
-print sum([int(x) for x in str(2**1000)])
+print(sum([int(x) for x in str(2**1000)]))

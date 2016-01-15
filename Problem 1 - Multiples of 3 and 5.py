@@ -1,7 +1,7 @@
 """
 Project: Project Euler - Problem 1: Multiples of 3 and 5
 Author: Mandeep Bhutani
-Date: 1/28/2015
+Date: 01/28/2015
 
 Problem:
 If we list all the natural numbers below 10 that are multiples of
@@ -10,10 +10,5 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 """
 
 
-def multiples():
-    result = 0
-    for i in range(1, 1000):
-        if i % 3 == 0 or i % 5 == 0:  # Find factors of 3 or 5
-            result += i  # Add these numbers to result
-    return result
-print multiples()
+result = sum([x for x in range(1, 1000) if x % 3 == 0 or x % 5 == 0])
+print(result)

@@ -1,7 +1,7 @@
 """
 Title: Project Euler - Problem 5: Smallest Multiple
 Author: Mandeep Bhutani
-Date: 2/1/2015
+Date: 02/01/2015
 
 Problem: 2520 is the smallest number that can be divided by each
 of the numbers from 1 to 10 without any remainder.
@@ -18,8 +18,8 @@ of two or more positive integers by first dividing the
 greatest common divisor of those integers prior to multiplying.
 """
 from fractions import gcd  # Importing the gcd module to find the lcm.
-
-print reduce(lambda a, b: (a * b) / gcd(a, b), range(1, 21))  # 20 + 1 range
+from functools import reduce
 
 # Using list comprehension of lambda a,b since it handles the reduce function.
 # Because lcm(a,b,c) = lcm(a,b),c,d..., range(1,21) can be used.
+print(reduce(lambda a, b: (a * b) // gcd(a, b), range(1, 21)))

@@ -31,4 +31,4 @@ def amicable(x):
             result.append(first_sum)
             result.append(second_sum)
     return sum(result)
-print amicable(10001)
+print(amicable(10001))

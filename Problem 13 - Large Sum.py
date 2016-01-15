@@ -113,9 +113,8 @@ An index slice is then used to find the first ten digits.
 
 References: https://docs.python.org/2/library/stdtypes.html#bltin-file-objects
 """
-with open('problem13numbers.txt') as n:
-    total = 0
-    for x in n:
-        total += int(x)  # Numbers in file need to be integers.
-        newtotal = str(total)  # total must be a string in order to slice it.
-        print newtotal[0:10]
+result = 0
+with open('problem13numbers.txt') as file:
+    for number in file:
+        result += int(number)  # Numbers in file need to be integers.
+print(str(result)[0:10])
