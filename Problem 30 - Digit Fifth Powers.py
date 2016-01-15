@@ -1,7 +1,7 @@
 """
 Project: Project Euler - Problem 30: Digit Fifth Powers
 Author: Mandeep Bhutani
-Date: 3/29/2015
+Date: 03/29/2015
 
 Problem: Surprisingly there are only three numbers that can be written as the
 sum of fourth powers of their digits: 1634, 8208, and 9474. As 1 = 1^4, it is
@@ -13,10 +13,10 @@ digits.
 
 def digit_powers(n):
     result = []
-    for i in xrange(2, 500000):
+    for i in range(2, 500000):
         digits = [int(x) for x in str(i)]
         total = [j ** n for j in digits]
         if sum(total) == i:
             result.append(i)
     return sum(result)
-print digit_powers(5)
+print(digit_powers(5))

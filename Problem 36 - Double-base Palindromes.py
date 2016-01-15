@@ -1,7 +1,7 @@
 """
 Project: Project Euler - Problem 36: Double-base Palindromes
 Author: Mandeep Bhutani
-Date: 4/17/2015
+Date: 04/17/2015
 
 Problem: The decimal number, 585 = 1001001001 (binary), is palindromic in both bases.
 Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.
@@ -10,8 +10,7 @@ Find the sum of all numbers, less than one million, which are palindromic in bas
 
 
 def is_palindrome(i):
-    i = str(i)
-    return i == i[::-1]
+    return str(i) == str(i)[::-1]
 
 
 def bin_palindrome(j):
@@ -20,7 +19,7 @@ def bin_palindrome(j):
 
 
 palindrome_sum = 0
-for x in xrange(1, 1000000):
-    if is_palindrome(x) == True and bin_palindrome(x) == True:
+for x in range(1, 1000000):
+    if is_palindrome(x) and bin_palindrome(x):
         palindrome_sum += x
-print palindrome_sum
+print(palindrome_sum)

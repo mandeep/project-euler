@@ -8,13 +8,10 @@ Fn = Fn-1 + Fn-2 where F1 = 0 and F2= 1. The 12th term, F12 is the first term
 to contain three digits. What is the first term in the Fibonacci sequence to
 contain 1000 digits?
 """
+term = 0
+a, b = 0, 1
 
-
-def fib(n):
-    a, b = 0, 1
-    term = 0
-    while len(str(a)) < n:
-        a, b = b, a+b
-        term += 1
-    return term
-print fib(1000)
+while len(str(a)) <= 1000:
+    a, b = b, a + b
+    term += 1
+print(term)

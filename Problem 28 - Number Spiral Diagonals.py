@@ -15,7 +15,7 @@ Starting with the number 1 and moving to the right in a clockwise direction a 5 
 It can be verified that the sum of the numbers on the diagonals is 101.
 What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?
 
-Description: Using the sample spiral, we can deduce a formula for each of the corners as follows:
+Analysis: Using the sample spiral, we can deduce a formula for each of the corners as follows:
 
 Bottom-Right: n ** 2 - 3n + 3
 Bottom-Left: n ** 2 - 2n + 2
@@ -29,5 +29,5 @@ of each of the smaller squares.
 """
 result = 1
 for n in range(3, 1001+1, 2):
-    result += 4 * (n ** 2) - (6 * n) + 6
+    result += (4 * (n ** 2) - (6 * n) + 6)
 print(result)

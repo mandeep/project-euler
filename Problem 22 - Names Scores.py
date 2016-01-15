@@ -1,7 +1,7 @@
 """
 Project: Project Euler - Problem 22: Names Scores
 Author: Mandeep Bhutani
-Date: 3/29/2015
+Date: 03/29/2015
 
 Problem: Using names.txt, a 46K text file, containing over five-thousand first
 names, begin by sorting it into alphabetical order. Then working out the
@@ -25,4 +25,4 @@ with open("names.txt") as text:
                 if char.isalpha():
                     total.append(key[char])
             result.append(sum(total) * (data.index(name) + 1))
-        print sum(result)
+        print(sum(result))

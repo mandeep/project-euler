@@ -1,7 +1,7 @@
 """
 Project: Project Euler - Problem 24: Lexicographic Permutations
 Author: Mandeep Bhutani
-Date: 4/4/2015
+Date: 04/4/2015
 
 Problem: A permutation is an ordered arrangement of objects. For example, 3124
 is one possible permutation of the digits 1, 2, 3 and 4. If all of the
@@ -17,4 +17,4 @@ count = 0
 for x in permutations("0123456789"):
     count += 1
     if count == 1000000:
-        print "".join(x)
+        print("".join(x))

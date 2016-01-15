@@ -10,7 +10,7 @@ For which value of p <= 1000, is the number of solutions maximised?
 """
 
 result = []
-for x in range(1, 1001):
+for x in range(1, 1000+1):
     total = []
     for a in range(1, x):
         for b in range(1, x):
@@ -20,4 +20,4 @@ for x in range(1, 1001):
                     total.append(sorted((a, b, c)))
     if len(total) > 3:
         result.append((len(total), x))
-print max(result)
+print(max(result))

@@ -1,7 +1,7 @@
 """
 Project: Project Euler - Problem 42: Coded Triangle Numbers
 Author: Mandeep Bhutani
-Date: 3/29/2015
+Date: 03/29/2015
 
 Problem: The nth term of the sequence of triangle numbers is given by,
 fn = n * (n+1) / 2; so the first ten triangle numbers are:
@@ -13,7 +13,7 @@ value is a triangle number then we shall call the word a triangle word. Using
 words.txt, a 16K text file containing nearly two-thousand common English words,
 how many are triangle words?
 
-Description: If there were a 10 letter word consisting entirely of Zs, the
+Analysis: If there were a 10 letter word consisting entirely of Zs, the
 total of each character's alphabetical position would be 260. Because of the
 small size of the value, just the first 25 triangular numbers are used in this
 algorithm with the expectation that the value of each word in the given text
@@ -22,9 +22,7 @@ document doesn't exceed 260.
 
 
 def triangle_numbers(n):
-    result = [x * (x + 1) / 2 for x in xrange(1, n + 1)]
-    return result
-
+    return [x * (x + 1) / 2 for x in range(1, n + 1)]
 
 letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 values = dict(zip(letters, range(1, 27)))
@@ -44,4 +42,4 @@ count = 0
 for number in result:
     if number in triangle_numbers(25):
         count += 1
-print count
+print(count)
