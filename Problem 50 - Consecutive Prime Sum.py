@@ -1,7 +1,7 @@
 """
 Project: Project Euler - Problem 50: Consecutive Prime Sum
 Author: Mandeep Bhutani
-Date: 4/10/2015
+Date: 04/10/2015
 
 Problem: The prime 41, can be written as the sum of six consecutive primes:
 41 = 2 + 3 + 5 + 7 + 11 + 13
@@ -16,16 +16,16 @@ from math import sqrt
 def is_prime(n):
     if n <= 1:
         return False
-    for i in xrange(2, int(sqrt(n) + 1)):
+    for i in range(2, int(sqrt(n) + 1)):
         if n % i == 0:
             return False
     else:
         return True
 
-primes = [x for x in xrange(7, 1000000) if is_prime(x) == True]
+primes = [x for x in range(7, 1000000) if is_prime(x)]
 total, result = 0, 0
 for number in primes:
     total = max(total, total + number)
     if total < 1000000:
         result = max(total, result)
-print result
+print(result)
