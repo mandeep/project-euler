@@ -18,14 +18,9 @@ References: http://en.wikipedia.org/wiki/Amicable_numbers
 def amicable(x):
     result = []
     for numbers in range(1, x):
-        first, second = [], []
-        for i in range(1, numbers):
-            if numbers % i == 0:
-                first.append(i)
+        first = [i for i in range(1, numbers) if numbers % i == 0]
         first_sum = sum(first)
-        for j in range(1, numbers):
-            if first_sum % j == 0:
-                second.append(j)
+        second = [j for j in range(1, numbers) if first_sum % j == 0]
         second_sum = sum(second)
         if second_sum == numbers and (first_sum - second_sum) > 1:
             result.append(first_sum)
