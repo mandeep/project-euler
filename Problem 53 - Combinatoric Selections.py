@@ -11,9 +11,9 @@ necessarily distinct, values of nCr for 1 <= n <= 100 are greater than one milli
 from math import factorial
 
 count = 0
-for n in xrange(1, 100+1):
-    for r in xrange(1, n+1):
+for n in range(1, 100+1):
+    for r in range(1, n+1):
         nCr = factorial(n) / (factorial(r) * factorial((n - r)))
         if nCr > 1000000:
             count += 1
-print count
+print(count)
