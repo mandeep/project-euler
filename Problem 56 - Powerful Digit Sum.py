@@ -8,10 +8,9 @@ zeros; 100^100 is almost unimaginably large: one followed by two-hundred zeros.
 Despite their size, the sum of the digits in each number is only 1. Considering
 natural numbers of the form, a^b, where a, b < 100, what is their maximum digital sum?
 """
-result = []
-for a in xrange(1, 100):
-    for b in xrange(1, 100):
+maximal_digit_sum = set()
+for a in range(1, 100):
+    for b in range(1, 100):
         digit_sum = sum([int(c) for c in str(a ** b)])
-        if digit_sum not in result:
-                result.append(digit_sum)
-print max(result)
+        maximal_digit_sum.add(digit_sum)
+print(max(maximal_digit_sum))
