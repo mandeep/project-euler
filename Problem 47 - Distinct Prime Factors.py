@@ -36,6 +36,6 @@ def factors(n):
 i = (2 * 3 * 5 * 7)
 while True:
     i += 1
-    if len(factors(i)) == 4 and len(factors(i + 1)) == 4 and len(factors(i + 2)) == 4 and len(factors(i + 3)) == 4:
+    if len(factors(i)) == len(factors(i + 1)) == len(factors(i + 2)) == len(factors(i + 3)) == 4:
         print(i)
         break
