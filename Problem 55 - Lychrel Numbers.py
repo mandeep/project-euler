@@ -15,13 +15,13 @@ number below ten-thousand, it will either (i) become a palindrome in less than f
 How many Lychrel numbers are there below ten-thousand?
 """
 result = 0
-for x in xrange(1, 10000):
-    y = int(str(x)[::-1]) + x
+for x in range(1, 10000):
+    lychrel = int(str(x)[::-1]) + x
     count = 0
-    while str(y) != str(y)[::-1]:
-        y += int(str(y)[::-1])
+    while str(lychrel) != str(lychrel)[::-1]:
+        lychrel += int(str(lychrel)[::-1])
         count += 1
         if count > 50:
             result += 1
             break
-print result
+print(result)
