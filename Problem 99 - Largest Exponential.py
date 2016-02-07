@@ -18,10 +18,10 @@ from math import log
 
 largest_exponential, max_line = 0, 0
 with open('base_exp.txt', 'r') as f:
-    for line_number, line in enumerate(f):
+    for line_number, line in enumerate(f, 1):
         base, exponent = line.strip().split(',')
         exponential = int(exponent) * log(int(base))
         if exponential > largest_exponential:
             largest_exponential = exponential
-            max_line = line_number + 1
+            max_line = line_number
 print(max_line)
