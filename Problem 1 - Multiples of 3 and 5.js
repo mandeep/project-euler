@@ -1,7 +1,7 @@
 /*
 Project: Project Euler - Problem 1: Multiples of 3 and 5
 Author: Mandeep Bhutani
-Date: 03/13/2015
+Date: 03/13/2016
 
 Problem:
 If we list all the natural numbers below 10 that are multiples of
