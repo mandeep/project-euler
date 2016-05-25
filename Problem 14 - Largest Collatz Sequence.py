@@ -32,9 +32,10 @@ def collatz(x):
 
 
 def largest_collatz(y):
-    total = []
+    total, sequence = 0, 0
     for x in range(1, y):
-        total.append((int(len(collatz(x)))))
-    largest = max(total)
-    return (total.index(largest) + 1)
+        if len(collatz(x)) > total:
+            total = len(collatz(x))
+            sequence = x
+    return sequence
 print(largest_collatz(1000001))
