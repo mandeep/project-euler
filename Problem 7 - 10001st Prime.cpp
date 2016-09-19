@@ -23,7 +23,7 @@ bool isPrime(int n) {
 
 int main() {
     int number = 0;
-    for (int count = 0; count < 10001;) {
+    for (int count = 1; count <= 10001;) {
         ++number;
         if (isPrime(number)) {
             count++;
