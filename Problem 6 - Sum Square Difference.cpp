@@ -25,6 +25,6 @@ int main() {
         sum_squares += pow(i, 2);
         square_sum += i;
     }
-    int result = pow(square_sum, 2) - sum_squares;
-    printf("%d", result);
+    int difference = pow(square_sum, 2) - sum_squares;
+    printf("%d", difference);
 }
