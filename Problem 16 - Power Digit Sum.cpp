@@ -22,8 +22,7 @@ int main() {
     int sum = 0;
     std::string number = std::to_string(pow(2, 1000));
     for (int i = 0; i < number.length(); ++i) {
-        int temp = number[i] - '0'; // Subtract '0' is a way of converting from char to int
-        sum += temp;
+        sum += number[i] - '0'; // Subtract '0' is a way of converting from char to int
     }
     std::cout << sum + 2 << std::endl; // Add 2 in order to account for pow's double precision
 }
