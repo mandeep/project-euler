@@ -12,10 +12,10 @@ whose values do not exceed four million, find the sum of the even-valued terms.
 #include <iostream>
 
 int main() {
-    int sum = 0;
-    int a = 0, b = 1;
+    int sum {0};
+    int a {0}, b {1};
     while (a <= 4000000) {
-        int c = a + b;
+        int c {a + b};
         a = b;
         b = c;
         if (a % 2 == 0) {
