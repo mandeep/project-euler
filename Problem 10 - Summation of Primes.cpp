@@ -22,7 +22,7 @@ bool isPrime(int n) {
 }
 
 int main() {
-    long long int sum = 0;
+    long long sum {0};
     for (int i = 2; i < 2000000; ++i) {
         if (isPrime(i)) {
             sum += i;
