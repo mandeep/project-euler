@@ -19,7 +19,7 @@ comprehension this can all be achieved in a single line.
 #include <string>
 
 int main() {
-    int sum = 0;
+    int sum {0};
     std::string number = std::to_string(pow(2, 1000));
     for (int i = 0; i < number.length(); ++i) {
         sum += number[i] - '0'; // Subtract '0' is a way of converting from char to int
