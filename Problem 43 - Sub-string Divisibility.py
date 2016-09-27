@@ -18,10 +18,10 @@ primes = [2, 3, 5, 7, 11, 13, 17]
 for x in permutations(str(1234567890)):
     total = []
     y = "".join(x)
-    for i in xrange(1, 8):
+    for i in range(1, 8):
         divisors = int(y[i] + y[i+1] + y[i+2])
         if divisors % primes[i-1] == 0:
             total.append(True)
-    if all(total) == True and len(total) == 7:
+    if all(total) is True and len(total) == 7:
         result += int("".join(x))
-print result
+print(result)
