@@ -29,11 +29,11 @@ def is_prime(n):
         return True
 
 composite = 33
-primes = [x for x in range(2, 10000) if is_prime(x) == True]
+primes = [x for x in range(2, 10000) if is_prime(x)]
 squares = [2 * (y ** 2) for y in range(1, 100)]
 total = [p + s for p in primes for s in squares]
 while True:
     composite += 2
-    if composite not in total and is_prime(composite) == False:
+    if composite not in total and not is_prime(composite):
         print(composite)
         break
