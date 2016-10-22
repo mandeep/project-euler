@@ -15,20 +15,15 @@ numbers and the square of the sum is 3025 - 385 = 2640.
 Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 */
-fn sum_squares(n: i64) -> i64 {
-    let mut summation: i64 = 0;
-    for i in 1..n+1 {
-        summation += i * i;
-    }
-    summation
+fn sum_squares(n: u64) -> u64 {
+    let sum: u64 = (1..n+1)
+        .fold(0, |sum, x| sum + (x * x));
+    sum
 }
 
-fn square_sum(n: i64) -> i64 {
-    let mut summation: i64 = 0;
-    for i in 1..n+1 {
-        summation += i;
-    }
-    summation * summation
+fn square_sum(n: u64) -> u64 {
+    let sum: u64 = (1..n+1).fold(0, |sum, x| sum + x);
+    sum * sum
 }
 
 fn main () {
