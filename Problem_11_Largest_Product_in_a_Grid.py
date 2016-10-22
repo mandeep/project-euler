@@ -8,6 +8,8 @@ marked in red. The product of these numbers is 26 x 63 x 78 x 14 = 1788696.
 What is the greatest product of four adjacent numbers in the same direction
 (up, down, left, right, or diagonally) in the 20x20 grid?
 """
+from functools import reduce
+
 grid = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -34,39 +36,32 @@ matrix = [[int(num) for num in row.split()] for row in grid]
 max_product = 0
 
 # Determine the maximum product of four consecutive numbers in each row
-for i in xrange(0, len(matrix)):
-    for j in xrange(0, len(matrix) - 4):
-        rows = matrix[i][j] * matrix[i][j + 1] * matrix[i][j + 2] * \
-                matrix[i][j + 3]
-        if rows > max_product:
-            max_product = rows
+for i in range(0, len(matrix)):
+    for j in range(0, len(matrix) - 4):
+        row_product = reduce(lambda k, l: k * l, matrix[i][j:j+4])
+        if row_product > max_product:
+            max_product = row_product
 
 # Determine the maximum product of four consecutive numbers in each column
-for e in xrange(0, len(matrix)):
-    columns = []
-    for col in matrix:
-        columns.append(col[e])
-    for f in xrange(0, len(columns) - 4):
-        cols = columns[f] * columns[f + 1] * columns[f + 2] * columns[f + 3]
-        if cols > max_product:
-            max_product = cols
+columns = [col[c] for c in range(0, len(matrix)) for col in matrix]
+for f in range(0, len(columns) - 4):
+    column_product = reduce(lambda g, h: g * h, columns[f:f+4])
+    if column_product > max_product:
+        max_product = column_product
 
-# Determine the maximum product of four adjacent numbers diagonally from left
-# to right
-for a in xrange(0, len(matrix) - 4):
-    for b in xrange(0, len(matrix) - 4):
-        left = matrix[a][b] * matrix[a + 1][b + 1] * matrix[a + 2][b + 2] \
-                * matrix[a + 3][b + 3]
-        if left > max_product:
-            max_product = left
+# Determine the maximum product of four adjacent numbers diagonally from left to right
+for a in range(0, len(matrix) - 4):
+    for b in range(0, len(matrix) - 4):
+        left_diagonal_product = matrix[a][b] * matrix[a + 1][b + 1] * matrix[a + 2][b + 2] * matrix[a + 3][b + 3]
+        if left_diagonal_product > max_product:
+            max_product = left_diagonal_product
 
 # Determine the maximum product of four adjacent numbers diagonally from right
 # to left
-for c in xrange(3, len(matrix)):
-    for d in xrange(0, len(matrix) - 4):
-        right = matrix[c][d] * matrix[c - 1][d + 1] * matrix[c - 2][d + 2] \
-            * matrix[c - 3][d + 3]
-        if right > max_product:
-            max_product = right
+for c in range(3, len(matrix)):
+    for d in range(0, len(matrix) - 4):
+        right_diagonal_product = matrix[c][d] * matrix[c - 1][d + 1] * matrix[c - 2][d + 2] * matrix[c - 3][d + 3]
+        if right_diagonal_product > max_product:
+            max_product = right_diagonal_product
 
-print max_product
+print(max_product)

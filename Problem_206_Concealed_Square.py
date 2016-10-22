@@ -26,6 +26,6 @@ smallest_square = int(sqrt(smallest_concealed_square))
 regex = r'^1\d2\d3\d4\d5\d6\d7\d8\d9$'
 
 for square in range(largest_square, smallest_square, -1):
-    if re.match(regex, str(square ** 2)) is not None:
+    if re.match(regex, str(square * square)) is not None:
         print(square * 10)
         break

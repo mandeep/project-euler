@@ -18,5 +18,5 @@ def is_prime(n):
     return True
 
 
-result = sum([x for x in range(1, 2000000) if is_prime(x)])
+result = sum(x for x in range(1, 2000000) if is_prime(x))
 print(result)

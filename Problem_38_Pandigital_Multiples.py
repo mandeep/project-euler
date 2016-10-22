@@ -24,7 +24,7 @@ we only need to test the range between the first four digits of these two number
 
 
 def is_pandigital(p):
-    return "".join(sorted(str(p))) == "123456789"
+    return ''.join(sorted(str(p))) == '123456789'
 
 
 for number in range(9876, 9182, -1):
