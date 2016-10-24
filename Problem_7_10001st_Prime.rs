@@ -8,17 +8,16 @@ we can see that the 6th prime is 13. What is the 10,001st prime number?
 */
 fn is_prime(n: i32) -> bool {
     if n < 2 { return false; }
-    let temp: f64 = n as f64;
+    let temp = n as f64;
     let limit: i32 = temp.sqrt() as i32;
     for i in 2..limit+1 { if n % i == 0 { return false; } }
     true
 }
 
 fn main() {
-    let mut count = 0;
-    let mut number = 1;
-    while count < 10001 { 
-        number += 1;
-        if is_prime(number) { count += 1; } }
-    println!("{}", number);
+    let number: Vec<i32> = (1..)
+        .filter(|&x| is_prime(x))
+        .take(10001)
+        .collect();
+    println!("{:?}", number.last());
 }
