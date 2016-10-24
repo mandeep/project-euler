@@ -16,8 +16,7 @@ Find the difference between the sum of the squares of the first one hundred
 natural numbers and the square of the sum.
 */
 fn sum_squares(n: u64) -> u64 {
-    let sum: u64 = (1..n+1)
-        .fold(0, |sum, x| sum + (x * x));
+    let sum: u64 = (1..n+1).fold(0, |sum, x| sum + (x * x));
     sum
 }
 

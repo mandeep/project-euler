@@ -9,7 +9,7 @@ Find the sum of all the primes below two million.
 fn is_prime(n: u32) -> bool {
     if n < 2 { return false; }
     let temp = n as f64;
-    let limit: u32 = temp.sqrt() as u32;
+    let limit = temp.sqrt() as u32;
     for i in 2..limit+1 { if n % i == 0 { return false; } }
     true
 }
