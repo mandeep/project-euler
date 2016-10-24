@@ -13,7 +13,6 @@ extern crate num;
 use num::integer::lcm;
 
 fn main() {
-    let divisors: Vec<i32> = (1..20+1).collect();
-    let num = divisors.iter().fold(1, |a, &b| lcm(a, b));
-    println!("{}", &num);
+    let multiple = (1..20+1).fold(1, |a, b| lcm(a, b));
+    println!("{}", multiple);
 }
