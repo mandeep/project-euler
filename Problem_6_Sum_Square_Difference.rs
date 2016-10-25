@@ -21,7 +21,7 @@ fn sum_squares(n: u64) -> u64 {
 }
 
 fn square_sum(n: u64) -> u64 {
-    let sum: u64 = (1..n+1).fold(0, |sum, x| sum + x);
+    let sum: u64 = (1..n+1).sum();
     sum * sum
 }
 

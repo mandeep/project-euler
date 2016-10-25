@@ -30,7 +30,7 @@ def find_divisors(n):
         if n % i == 0:
             result.append(i)
             result.append(n / i)
-    return sorted(result)
+    return result
 
 
 def find_triangular(n):
