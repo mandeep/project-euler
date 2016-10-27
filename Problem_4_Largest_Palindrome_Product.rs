@@ -21,7 +21,7 @@ fn main() {
     let mut maximum: u32 = 0;
     for x in 100..1000 {
         for y in x..1000 {
-            if is_palindrome(&x * &y) && &x * &y > maximum { maximum = x * y }
+            if is_palindrome(x * y) && x * y > maximum { maximum = x * y }
         }
     }
     println!("{:?}", maximum);
