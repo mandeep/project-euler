@@ -43,7 +43,7 @@ for i in range(0, len(matrix)):
             max_product = row_product
 
 # Determine the maximum product of four consecutive numbers in each column
-columns = [col[c] for c in range(0, len(matrix)) for col in matrix]
+columns = [column[row] for row in range(0, len(matrix)) for column in matrix]
 for f in range(0, len(columns) - 4):
     column_product = reduce(lambda g, h: g * h, columns[f:f+4])
     if column_product > max_product:
