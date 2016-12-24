@@ -14,9 +14,10 @@ Find the maximum total from top to bottom of the triangle below:
 
 Description: By transposing the triangle from largest row on top to smallest row on the
 bottom, we can iterate through each number allowing us to find the max of the number
-adjacent to the number preceding it. 
+adjacent to the number preceding it.
 """
-triangle = """75
+triangle = """
+75
 95 64
 17 47 82
 18 35 87 10
@@ -38,4 +39,5 @@ triangle = [[int(x) for x in row.split()] for row in triangle]
 for row in range(len(triangle) - 1, 0, -1):
     for column in range(0, row):
         triangle[row - 1][column] += max(triangle[row][column], triangle[row][column + 1])
+
 print(triangle[row - 1][column])
