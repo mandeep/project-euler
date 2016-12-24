@@ -8,7 +8,7 @@ we can see that the 6th prime is 13. What is the 10,001st prime number?
 */
 fn is_prime(n: u32) -> bool {
     if n < 2 { return false; }
-    let limit: u32 = (n as f32).sqrt() as u32;
+    let limit = (n as f32).sqrt() as u32;
     for i in 2..limit+1 { if n % i == 0 { return false; } }
     true
 }
