@@ -22,13 +22,12 @@ fn factorial(n: usize) -> BigUint {
 
 fn sum_digits(n: BigUint) -> u32 {
     let mut num: BigUint = n;
-    let mut digits: Vec<u32> = Vec::new();
+    let mut summation = 0;
     for _ in 1..250 {
         let digit = Integer::mod_floor(&num, &BigUint::from(10 as u32));
         num = Integer::div_floor(&num, &BigUint::from(10 as u32));
-        digits.push(ToPrimitive::to_u32(&digit).unwrap());
+        summation += ToPrimitive::to_u32(&digit).unwrap();
     }
-    let summation: u32 = digits.iter().sum();
     summation
 }
 
