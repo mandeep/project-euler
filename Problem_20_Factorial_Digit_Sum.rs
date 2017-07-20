@@ -16,12 +16,11 @@ use num::traits::{One, ToPrimitive};
 
 
 fn factorial(n: usize) -> BigUint {
-    (1..n+1).fold(One::one(), |sum, x| sum * BigUint::from(x))
+    (1..n+1).fold(One::one(), |acc, x| acc * BigUint::from(x))
 }
 
 
-fn sum_digits(n: BigUint) -> u32 {
-    let mut num: BigUint = n;
+fn sum_digits(mut num: BigUint) -> u32 {
     let mut summation = 0;
     for _ in 1..250 {
         let digit = Integer::mod_floor(&num, &BigUint::from(10 as u32));
