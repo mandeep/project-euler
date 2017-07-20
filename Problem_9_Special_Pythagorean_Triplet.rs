@@ -10,11 +10,12 @@ There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product of a*b*c.
 */
 fn main() {
-    for a in 1..1000 {
-        for b in 1..1000-a {
+    'outer: for a in 1..1000 {
+        'inner: for b in 1..1000-a {
             let c = 1000 - a - b;
             if a * a + b * b == c * c {
                 println!("{}", a * b * c);
+                break 'outer;
             }
         }
     }
