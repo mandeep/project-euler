@@ -14,9 +14,6 @@ fn is_prime(n: u32) -> bool {
 }
 
 fn main() {
-    let number: Vec<u32> = (1..)
-        .filter(|&x| is_prime(x))
-        .take(10001)
-        .collect();
-    println!("{:?}", number.last());
+    let number = (2..).filter(|&x| is_prime(x)).nth(10000).unwrap();
+    println!("{:?}", number);
 }
