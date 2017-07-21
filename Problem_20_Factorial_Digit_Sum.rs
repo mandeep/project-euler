@@ -12,7 +12,7 @@ extern crate num;
 
 use num::Integer;
 use num::BigUint;
-use num::traits::{One, ToPrimitive};
+use num::traits::{One, ToPrimitive, Zero};
 
 
 fn factorial(n: usize) -> BigUint {
@@ -22,7 +22,7 @@ fn factorial(n: usize) -> BigUint {
 
 fn sum_digits(mut num: BigUint) -> u32 {
     let mut summation = 0;
-    for _ in 1..250 {
+    while num > Zero::zero() {
         let digit = Integer::mod_floor(&num, &BigUint::from(10 as u32));
         num = Integer::div_floor(&num, &BigUint::from(10 as u32));
         summation += ToPrimitive::to_u32(&digit).unwrap();
