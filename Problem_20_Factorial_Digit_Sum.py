@@ -15,5 +15,5 @@ a user defined function was chosen for this problem.
 """
 from math import factorial
 
-sum_of_digits = sum([int(x) for x in str(factorial(100))])
+sum_of_digits = sum(int(x) for x in str(factorial(100)))
 print(sum_of_digits)
