@@ -20,10 +20,10 @@ def factorial_digits(n):
     return summation
 
 
-result = 0
-for number in range(1, factorial(9)):
-    total = factorial_digits(number)
-    if total == number and total > 2:
-        result += number
+summation = 0
+for number in range(3, factorial(9)):
+    factorial_sum = factorial_digits(number)
+    if factorial_sum == number:
+        summation += number
 
-print(result)
+print(summation)
