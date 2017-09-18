@@ -14,8 +14,10 @@ Find the product of a*b*c.
 
 def pythagorean_triplet(p):
     for a in range(1, p+1):
-        for b in range(1, p+1 - a):
+        for b in range(a, p+1 - a):
             c = p - a - b
             if a ** 2 + b ** 2 == c ** 2:
                 return a * b * c
+
+
 print(pythagorean_triplet((1000)))
