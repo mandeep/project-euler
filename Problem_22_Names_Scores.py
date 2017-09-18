@@ -15,14 +15,13 @@ x 53 = 49714. What is the total of all the name scores in the file?
 letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 key = dict(zip(letters, range(1, 27)))
 
-with open("names.txt") as text:
-    result = []
-    for data in text:
-        data = sorted(data.split(","))
-        for name in data:
-            total = []
-            for char in name:
-                if char.isalpha():
-                    total.append(key[char])
-            result.append(sum(total) * (data.index(name) + 1))
-        print(sum(result))
+total = 0
+
+with open("names.txt") as names_file:
+    names = sorted(names_file.read().split(','))
+
+for name in names:
+    count = sum(key[char] for char in name if char.isalpha())
+    total += count * (names.index(name) + 1)
+
+print(total)
