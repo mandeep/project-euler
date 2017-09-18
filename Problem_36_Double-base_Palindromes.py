@@ -19,7 +19,8 @@ def bin_palindrome(j):
 
 
 palindrome_sum = 0
-for x in range(1, 1000000):
-    if is_palindrome(x) and bin_palindrome(x):
-        palindrome_sum += x
+for number in range(1, 1000000):
+    if is_palindrome(number) and bin_palindrome(number):
+        palindrome_sum += number
+
 print(palindrome_sum)
