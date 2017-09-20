@@ -24,22 +24,20 @@ document doesn't exceed 260.
 def triangle_numbers(n):
     return [x * (x + 1) / 2 for x in range(1, n + 1)]
 
+
 letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 values = dict(zip(letters, range(1, 27)))
 
-result = []
 with open("words.txt") as text:
-    for data in text:
-        data = data.split(",")
-        for word in data:
-            total = []
-            for char in word:
-                if char.isalpha():
-                    total.append(values[char])
-            result.append(sum(total))
+    words = text.read().split(',')
+
+letter_scores = []
+for word in words:
+    score = sum(values[char] for char in word if char.isalpha())
+    letter_scores.append(score)
 
 count = 0
-for number in result:
+for number in letter_scores:
     if number in triangle_numbers(25):
         count += 1
 print(count)
