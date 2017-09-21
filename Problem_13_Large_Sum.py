@@ -4,7 +4,16 @@ Author: Mandeep Bhutani
 Date: 2/1/2015
 
 Problem: Work out the first ten digits of the sum of the following
-one-hundred 50-digit numbers:
+one-hundred 50-digit numbers: (see below)
+
+Description: This problem was solved by adding all the numbers
+into a file, and then retrieving the numbers as x in a for loop.
+Each x is then added to the total variable in order to find the sum.
+An index slice is then used to find the first ten digits.
+
+References: https://docs.python.org/2/library/stdtypes.html#bltin-file-objects
+"""
+numbers = """
 37107287533902102798797998220837590246510135740250
 46376937677490009712648124896970078050417018260538
 74324986199524741059474233309513058123726617309629
@@ -105,16 +114,8 @@ one-hundred 50-digit numbers:
 72107838435069186155435662884062257473692284509516
 20849603980134001723930671666823555245252804609722
 53503534226472524250874054075591789781264330331690
-
-Description: This problem was solved by adding all the numbers
-into a file, and then retrieving the numbers as x in a for loop.
-Each x is then added to the total variable in order to find the sum.
-An index slice is then used to find the first ten digits.
-
-References: https://docs.python.org/2/library/stdtypes.html#bltin-file-objects
 """
-result = 0
-with open('problem13numbers.txt') as file:
-    for number in file:
-        result += int(number)  # Numbers in file need to be integers.
-print(str(result)[0:10])
+summation = 0
+for number in numbers.split():
+    summation += int(number)  # Numbers in file need to be integers.
+print(str(summation)[0:10])
