@@ -9,14 +9,20 @@ For example, 3^2 + 4^2 = 9 + 16 = 25 + 5^2.
 There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 Find the product of a*b*c.
 */
-fn main() {
-    'outer: for a in 1..1000 {
-        'inner: for b in 1..1000-a {
-            let c = 1000 - a - b;
+
+fn pythagorean_triplet(n: i32) -> i32 {
+    for a in 1..n {
+        for b in a..n-a {
+            let c = n - a - b;
             if a * a + b * b == c * c {
-                println!("{}", a * b * c);
-                break 'outer;
+                return a * b * c;
             }
         }
     }
+    return 0;
+}
+
+
+fn main() {
+    println!("{:?}", pythagorean_triplet(1000));
 }
