@@ -11,8 +11,11 @@ Find the sum of all the multiples of 3 or 5 below 1000.
 
 
 fn main() {
-    let summation: u64 = (1..1000)
-        .filter(|&x| x % 3 == 0 || x % 5 == 0)
-        .sum();
+    let multiples_of_3 = 3 * (999 / 3 * (999 / 3 + 1) / 2);
+    let multiples_of_5 = 5 * (995 / 5 * (995 / 5 + 1) / 2);
+    let multiples_of_15 = 15 * (990 / 15 * (990 / 15 + 1) / 2);
+
+    let summation = multiples_of_3 + multiples_of_5 - multiples_of_15;
+
     println!("{}", summation);
 }
