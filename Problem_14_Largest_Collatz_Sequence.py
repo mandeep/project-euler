@@ -23,22 +23,23 @@ import numba
 
 @numba.jit
 def collatz(number):
-    sequence = []
-    while number > 1:
-        sequence.append(number)
+    i = 0
+    while number != 1:
         if number % 2 == 0:
             number //= 2
         else:
             number = 3 * number + 1
-    return sequence
+        i += 1
+    return i
 
 
 @numba.jit
 def largest_collatz(limit):
     total, largest_sequence = 0, 0
     for number in range(1, limit):
-        if len(collatz(number)) > total:
-            total = len(collatz(number))
+        iterations = collatz(number)
+        if iterations > total:
+            total = iterations
             largest_sequence = number
     return largest_sequence
 
