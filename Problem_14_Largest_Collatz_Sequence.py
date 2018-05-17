@@ -23,14 +23,14 @@ import numba
 
 @numba.jit
 def collatz(number):
-    i = 0
+    count = 0
     while number != 1:
         if number % 2 == 0:
             number //= 2
         else:
             number = 3 * number + 1
-        i += 1
-    return i
+        count += 1
+    return count
 
 
 @numba.jit
