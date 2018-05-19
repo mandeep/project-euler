@@ -17,10 +17,15 @@ def is_prime(n):
             return False
     return True
 
-count = 0
-prime = 1
-while count < 10001:
-    prime += 1
-    if is_prime(prime):
-        count += 1
-print(prime)
+
+def find_prime(limit):
+    count = 0
+    prime = 1
+    while count < limit:
+        prime += 1
+        if is_prime(prime):
+            count += 1
+    return prime
+
+
+print(find_prime(10001))
