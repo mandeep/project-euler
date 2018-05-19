@@ -10,10 +10,15 @@ By considering the terms in the Fibonacci sequence
 whose values do not exceed four million, find the sum of the even-valued terms.
 """
 
-a, b = 0, 1
-result = 0
-while a < 4000000:
-    if a % 2 == 0:
-        result += a
-    a, b = b, a + b
-print(result)
+
+def fib(n):
+    a, b = 0, 1
+    summation = 0
+    while a < n:
+        if a % 2 == 0:
+            summation += a
+        a, b = b, a + b
+    return summation
+
+
+print(fib(4000000))
