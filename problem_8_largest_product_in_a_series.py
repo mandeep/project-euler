@@ -2,8 +2,16 @@
 Title: Project Euler - Problem 8: Largest Product in a Series
 Date: 01/14/2016
 
-Problem: The four adjacent digits in the 1000-digit number that have the
-greatest product are 9 x 9 x 8 x 9 = 5832.
+Problem:
+The four adjacent digits in the 1000-digit number that have the
+greatest product are 9 x 9 x 8 x 9 = 5832. Find the thirteen
+adjacent digits in the 1000-digit number that have the
+greatest product. What is the value of this product?
+"""
+from functools import reduce
+
+
+large_number = """
 73167176531330624919225119674426574742355349194934
 96983520312774506326239578318016984801869478851843
 85861560789112949495459501737958331952853208805511
@@ -24,20 +32,15 @@ greatest product are 9 x 9 x 8 x 9 = 5832.
 84580156166097919133875499200524063689912560717606
 05886116467109405077541002256983155200055935729725
 71636269561882670428252483600823257530420752963450
-Find the thirteen adjacent digits in the 1000-digit number that have the
-greatest product. What is the value of this product?
 """
-from functools import reduce
 
-large_number = []
-with open('problem8number.txt') as file:
-    for lines in file:
-        for line in lines.splitlines():
-            for digit in line:
-                large_number.append(int(digit))
-result = 0
+large_number = [int(n) for n in list(large_number.replace('\n', ''))]
+
+greatest_product = 0
+
 for x in range(0, len(large_number) - 12):
     product = reduce(lambda y, z: y * z, large_number[x: x + 12+1])
-    if product > result:
-        result = product
-print(result)
+    if product > greatest_product:
+        greatest_product = product
+
+print(greatest_product)
