@@ -36,11 +36,9 @@ large_number = """
 
 large_number = [int(n) for n in list(large_number.replace('\n', ''))]
 
-greatest_product = 0
+product = 1
 
 for x in range(0, len(large_number) - 12):
-    product = reduce(lambda y, z: y * z, large_number[x: x + 12+1])
-    if product > greatest_product:
-        greatest_product = product
+    product = max(product, reduce(lambda y, z: y * z, large_number[x: x + 12+1]))
 
-print(greatest_product)
+print(product)
