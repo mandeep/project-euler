@@ -38,30 +38,23 @@ max_product = 0
 # Determine the maximum product of four consecutive numbers in each row
 for i in range(0, len(matrix)):
     for j in range(0, len(matrix) - 4):
-        row_product = reduce(lambda k, l: k * l, matrix[i][j:j+4])
-        if row_product > max_product:
-            max_product = row_product
+        max_product = max(max_product, reduce(lambda k, l: k * l, matrix[i][j:j + 4]))
 
 # Determine the maximum product of four consecutive numbers in each column
 columns = [column[row] for row in range(0, len(matrix)) for column in matrix]
 for f in range(0, len(columns) - 4):
-    column_product = reduce(lambda g, h: g * h, columns[f:f+4])
-    if column_product > max_product:
-        max_product = column_product
+    max_product = max(max_product, reduce(lambda g, h: g * h, columns[f:f + 4]))
 
 # Determine the maximum product of four adjacent numbers diagonally from left to right
 for a in range(0, len(matrix) - 4):
     for b in range(0, len(matrix) - 4):
-        left_diagonal_product = matrix[a][b] * matrix[a + 1][b + 1] * matrix[a + 2][b + 2] * matrix[a + 3][b + 3]
-        if left_diagonal_product > max_product:
-            max_product = left_diagonal_product
+        max_product = max(max_product, (matrix[a][b] * matrix[a + 1][b + 1] *
+                                        matrix[a + 2][b + 2] * matrix[a + 3][b + 3]))
 
-# Determine the maximum product of four adjacent numbers diagonally from right
-# to left
+# Determine the maximum product of four adjacent numbers diagonally from right to left
 for c in range(3, len(matrix)):
     for d in range(0, len(matrix) - 4):
-        right_diagonal_product = matrix[c][d] * matrix[c - 1][d + 1] * matrix[c - 2][d + 2] * matrix[c - 3][d + 3]
-        if right_diagonal_product > max_product:
-            max_product = right_diagonal_product
+        max_product = max(max_product, (matrix[c][d] * matrix[c - 1][d + 1] *
+                                        matrix[c - 2][d + 2] * matrix[c - 3][d + 3]))
 
 print(max_product)
