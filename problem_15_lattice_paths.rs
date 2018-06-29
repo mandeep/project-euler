@@ -20,7 +20,10 @@ fn factorial(n: usize) -> BigUint {
 }
 
 
+fn lattice_paths(n: usize) -> BigUint {
+    factorial(2 * n) / (factorial(n) * factorial(n))
+}
+
 fn main() {
-    let paths: BigUint = factorial(40) / (factorial(20) * factorial(20));
-    println!("{}", paths);
+    println!("{}", lattice_paths(20));
 }
