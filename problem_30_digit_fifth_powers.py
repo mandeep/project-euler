@@ -11,12 +11,22 @@ digits.
 """
 
 
+def separate_digits(n):
+    digits = []
+    while n > 0:
+        digits.append(n % 10)
+        n //= 10
+    return digits
+
+
 def digit_powers(n):
-    result = []
+    summation = 0
     for i in range(2, 500000):
-        digits = [int(x) for x in str(i)]
+        digits = separate_digits(i)
         total = [j ** n for j in digits]
         if sum(total) == i:
-            result.append(i)
-    return sum(result)
+            summation += i
+    return summation
+
+
 print(digit_powers(5))
