@@ -13,6 +13,8 @@ References: https://en.wikipedia.org/wiki/Pascal's_triangle
 from math import factorial
 
 
-n = 20
-result = factorial(2 * n) // (factorial(n) * factorial(n))
-print(result)
+def find_lattice_paths(n):
+    """Find the number of lattice paths given an n x n grid."""
+    return factorial(2 * n) // (factorial(n) * factorial(n))
+
+print(find_lattice_paths(20))
