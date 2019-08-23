@@ -24,16 +24,12 @@ elements = ((1, "one"), (2, "two"), (3, "three"), (4, "four"), (5, "five"),
             (500, "five hundred"), (600, "six hundred"), (700, "seven hundred"),
             (800, "eight hundred"), (900, "nine hundred"), (1000, "one thousand"))
 
-
-x = 1
 combination = ""
-while x < 1001:
-    y = x
+for i in range(1, 1001):
     for number, word in elements[::-1]:
-        while y >= number:
+        while i >= number:
             combination += word
-            y -= number
-    x += 1
+            i -= number
 
 combination = combination.replace(" ", "")
 
