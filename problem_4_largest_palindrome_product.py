@@ -32,8 +32,8 @@ def is_palindrome(n):
 
 
 def largest_palindrome_product(number):
-    product = 101
-    for x in range(121, number, 11):
+    product = 0
+    for x in range(902, number, 11):
         for y in range(x + 1, number):
             if is_palindrome(x * y):
                 product = max(product, x * y)
