@@ -37,7 +37,6 @@ def largest_palindrome_product(number):
         for y in range(x + 1, number):
             if is_palindrome(x * y):
                 product = max(product, x * y)
-                print(x, y)
     return product
 
 
