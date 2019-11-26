@@ -25,11 +25,10 @@ from math import sqrt
 
 
 def find_divisors(n):
-    divisors = []
+    divisors = 0
     for i in range(1, int(sqrt(n) + 1)):
         if n % i == 0:
-            divisors.append(i)
-            divisors.append(n / i)
+            divisors += 2
     return divisors
 
 
@@ -38,7 +37,7 @@ def find_triangular(n):
     while True:
         number = x * (x + 1) // 2
         x += 1
-        if len(find_divisors(number)) > n:
+        if find_divisors(number) > n:
             return number
 
 
