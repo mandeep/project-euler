@@ -15,14 +15,14 @@ References: http://en.wikipedia.org/wiki/Amicable_numbers
 """
 
 
-def amicable(limit):
-    result = 0
+def find_amicable_sum(limit):
+    amicable_sum = 0
     for numbers in range(1, limit):
         sum_divisors = sum(i for i in range(1, numbers) if numbers % i == 0)
         sum_divisors_sum = sum(j for j in range(1, numbers) if sum_divisors % j == 0)
         if sum_divisors_sum == numbers and (sum_divisors - sum_divisors_sum) > 1:
-            result += sum_divisors
-            result += sum_divisors_sum
-    return result
+            amicable_sum += sum_divisors
+            amicable_sum += sum_divisors_sum
+    return amicable_sum
 
-print(amicable(10001))
+print(find_amicable_sum(10001))
