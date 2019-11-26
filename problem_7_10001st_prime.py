@@ -12,7 +12,11 @@ from math import sqrt
 def is_prime(n):
     if n < 2:
         return False
-    for i in range(2, int(sqrt(n)+1)):
+    elif n % 2 == 0:
+        return n == 2
+    elif n % 3 == 0:
+        return n == 3
+    for i in range(5, int(sqrt(n)+1)):
         if n % i == 0:
             return False
     return True
@@ -26,6 +30,5 @@ def find_prime(limit):
         if is_prime(prime):
             count += 1
     return prime
-
 
 print(find_prime(10001))
