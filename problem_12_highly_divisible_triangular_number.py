@@ -23,7 +23,10 @@ from 1 until a solution is reached.
 """
 from math import sqrt
 
+import numba
 
+
+@numba.jit
 def find_divisors(n):
     divisors = 0
     for i in range(1, int(sqrt(n) + 1)):
@@ -32,6 +35,7 @@ def find_divisors(n):
     return divisors
 
 
+@numba.jit
 def find_triangular(n):
     x = 1
     while True:
