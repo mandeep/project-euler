@@ -17,16 +17,18 @@ from math import sqrt
 
 
 def is_abundant(n):
-    total = []
+    total = set()
     for i in range(1, int(sqrt(n)+1)):
         if n % i == 0:
-            if i not in total:
-                total.append(i)
-                if (n // i) != n and (n // i) not in total:
-                    total.append(n / i)
+            total.add(i)
+            if (n // i) != n:
+                total.add(n / i)
     return sum(total) > n
 
-abundant_numbers = [x for x in range(1, 28123+1) if is_abundant(x)]
-abundant_sums = set([(h + j) for h in abundant_numbers for j in abundant_numbers])
-result = sum([k for k in range(1, 28123+1) if k not in abundant_sums])
-print(result)
+def find_nonabundant_sum(n):
+    abundant_numbers = [x for x in range(1, n+1) if is_abundant(x)]
+    abundant_sums = set([(h + j) for h in abundant_numbers for j in abundant_numbers])
+    nonabundant_sum = sum([k for k in range(1, n+1) if k not in abundant_sums])
+    return nonabundant_sum
+
+print(find_nonabundant_sum(28123))
