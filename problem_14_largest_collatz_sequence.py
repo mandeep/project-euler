@@ -18,10 +18,8 @@ it is thought that all starting numbers finish at 1.
 
 Which starting number, under one million, produces the longest chain?
 """
-import numba
 
 
-@numba.jit
 def collatz(number):
     count = 0
     while number != 1:
@@ -33,7 +31,6 @@ def collatz(number):
     return count
 
 
-@numba.jit
 def largest_collatz(limit):
     total, largest_sequence = 0, 0
     for number in range(1, limit):
