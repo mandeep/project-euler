@@ -12,11 +12,15 @@ century (1 Jan 1901 to 31 Dec 2000)?
 """
 from datetime import date
 
-number_of_sundays = 0
 
-for year in range(1901, 2000+1):
-    for month in range(1, 12+1):
-        if date(year, month, 1).isoweekday() == 7:
-            number_of_sundays += 1
+def count_sundays(a, b):
+    number_of_sundays = 0
 
-print(number_of_sundays)
+    for year in range(a, b+1):
+        for month in range(1, 12+1):
+            if date(year, month, 1).isoweekday() == 7:
+                number_of_sundays += 1
+
+    return number_of_sundays
+
+print(count_sundays(1901, 2000))
