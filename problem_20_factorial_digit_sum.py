@@ -13,7 +13,17 @@ Analysis: First a function for a factorial needs to be defined.
 While there is a math.factorial function that could serve this purpose,
 a user defined function was chosen for this problem.
 """
-from math import factorial
 
-sum_of_digits = sum(int(x) for x in str(factorial(100)))
-print(sum_of_digits)
+
+def factorial(n):
+    product = 1
+    for i in range(2, n+1):
+        product *= i
+    return product
+
+
+def sum_factorial_digits(n):
+    return sum(int(x) for x in str(factorial(100)))
+
+
+print(sum_factorial_digits(100))
