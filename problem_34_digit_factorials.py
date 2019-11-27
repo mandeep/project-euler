@@ -12,7 +12,7 @@ Analysis: Factorial(9) is used as the upper bound
 from math import factorial
 
 
-def factorial_digits(n):
+def sum_factorial_digits(n):
     summation = 0
     while n > 0:
         summation += factorial(n % 10)
@@ -20,10 +20,12 @@ def factorial_digits(n):
     return summation
 
 
-summation = 0
-for number in range(3, factorial(9)):
-    factorial_sum = factorial_digits(number)
-    if factorial_sum == number:
-        summation += number
+def sum_factorial_sum(n):
+    sum_factorial_sum = 0
+    for number in range(3, n):
+        factorial_sum = sum_factorial_digits(number)
+        if factorial_sum == number:
+            sum_factorial_sum += number
+    return sum_factorial_sum
 
-print(summation)
+print(sum_factorial_sum(factorial(9)))
