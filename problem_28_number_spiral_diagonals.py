@@ -27,7 +27,13 @@ Adding all of these corners yields: 4 * (n ** 2) - (6 * n) + 6
 To find the sum of the diagonals of the largest square, we use the formula to find the number in the corners
 of each of the smaller squares.
 """
-result = 1
-for n in range(3, 1001+1, 2):
-    result += (4 * (n ** 2) - (6 * n) + 6)
-print(result)
+
+
+def sum_spiral_diagonals(n):
+    traces = 0
+    for entry in range(3, n+1, 2):
+        traces += (4 * (entry ** 2) - (6 * entry) + 6)
+    return traces
+
+
+print(sum_spiral_diagonals(1001))
