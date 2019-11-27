@@ -20,13 +20,13 @@ def separate_digits(n):
 
 
 def digit_powers(n):
-    summation = 0
-    for i in range(2, 500000):
+    sum_fifth_powers = 0
+    for i in range(2, n * 100000):
         digits = separate_digits(i)
-        total = [j ** n for j in digits]
-        if sum(total) == i:
-            summation += i
-    return summation
+        fifth_power = sum(j ** n for j in digits)
+        if fifth_power == i:
+            sum_fifth_powers += fifth_power
+    return sum_fifth_powers
 
 
 print(digit_powers(5))
